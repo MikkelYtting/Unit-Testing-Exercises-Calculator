@@ -64,5 +64,30 @@ namespace Unit_Testing_Exercises_CalculatorTests
             Assert.AreEqual(-9, result1);
             Assert.AreEqual(8, result2);
         }
+        [TestMethod]
+        public void TestSubtract_WithMinValue()
+        {
+            // Arrange
+            CalculatorModel calculator = new CalculatorModel();
+
+            // Act
+            int result = calculator.Subtract(int.MinValue, 1);
+
+            // Assert
+            Assert.AreEqual(int.MinValue + 1, result);
+        }
+
+        [TestMethod]
+        public void TestSubtract_WithMaxValue()
+        {
+            // Arrange
+            CalculatorModel calculator = new CalculatorModel();
+
+            // Act
+            int result = calculator.Subtract(int.MaxValue, 1);
+
+            // Assert
+            Assert.AreEqual(int.MaxValue - 1, result);
+        }
     }
 }
